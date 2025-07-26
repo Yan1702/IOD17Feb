@@ -31,10 +31,10 @@ class_names = [
 
 # Load Image Modle
 def load_image_model():
-    with open('best_model.json', 'r') as json_file:
+    with open('CapstoneProject/best_model.json', 'r') as json_file:
         model_json = json_file.read()
     model = model_from_json(model_json)
-    model.load_weights('best_model.weights.h5')
+    model.load_weights('CapstoneProject/best_model.weights.h5')
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
     return model
 
