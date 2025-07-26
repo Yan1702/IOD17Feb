@@ -14,6 +14,7 @@ import numpy as np
 import tensorflow as tf
 from PIL import Image, ImageOps
 from tensorflow.keras.models import model_from_json
+from tensorflow.keras.models import load_model
 
 st.__version__
 
@@ -31,10 +32,11 @@ class_names = [
 
 # Load Image Modle
 def load_image_model():
-    with open('CapstoneProject/best_model.json', 'r') as json_file:
-        model_json = json_file.read()
-    model = model_from_json(model_json)
-    model.load_weights('CapstoneProject/best_model.weights.h5')
+    #with open('CapstoneProject/best_model.json', 'r') as json_file:
+    #    model_json = json_file.read()
+    #model = model_from_json(model_json)
+    #model.load_weights('CapstoneProject/best_model.weights.h5')
+    model = load_model('CapstoneProject/best_model.keras')
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
     return model
 
