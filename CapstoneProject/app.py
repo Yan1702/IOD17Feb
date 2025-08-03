@@ -5,6 +5,8 @@ from PIL import Image, ImageOps
 from tensorflow.keras.models import model_from_json
 from tensorflow.keras.models import load_model
 
+st.legacy_caching.clear_cache()
+
 
 # Define class labels
 class_names = [
