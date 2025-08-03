@@ -33,7 +33,8 @@ def import_and_predict(image_data, model):
     # Convert to NumPy array and normalize to [0, 1]
     image = np.asarray(image).astype(np.float32) / 255.0
     # Add batch dimension: shape becomes (1, 224, 224, 3)
-    img_reshape = image[np.newaxis, ...]
+    #img_reshape = image[np.newaxis, ...]
+    img_reshape = np.expand_dims(image, axis=0)
     # Predict
     prediction = model.predict(img_reshape)
     return prediction
