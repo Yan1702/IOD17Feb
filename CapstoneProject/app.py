@@ -20,9 +20,8 @@ class_names = [
 
 # Load Image Modle
 def load_image_model():
-    #model = load_model('CapstoneProject/best_model.keras')
-    model = load_model('CapstoneProject/best_model.keras', custom_objects={})
-    print(model.input_shape)  # Check the expected input shape
+    model = load_model('CapstoneProject/best_model.keras')
+    #model = load_model('CapstoneProject/best_model.keras', custom_objects={})
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
     return model
 
